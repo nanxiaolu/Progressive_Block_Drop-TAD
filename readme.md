@@ -9,11 +9,11 @@ The English version of the README is available [here](readme_en.md).
 
 代码是基于工作[OpenTAD](https://github.com/sming256/OpenTAD)的基础上修改，其数据准备，环境配置，代码架构，运行指令基本一致。该仓库支持Thumos数据集和 (optional) ActivityNet数据集。
 
-![模型框架图](docs\figures\paper_cvpr2025_block_drop.png)
+![模型框架图](docs/figures/paper_cvpr2025_block_drop.png)
 
 ## 🛠️ 安装
 
-请按[install.md](docs\en\install.md)准备环境，数据，模型等。
+请按[install.md](docs/en/install.md)准备环境，数据，模型等。
 
 ## 指令
  训练指令（默认THUMOS数据集）：
@@ -42,16 +42,16 @@ opentad/models/backbones/vit_teacher.py # 蒸馏的教师模型内层
 ```
 ## （optional）更深层的模型压缩
 videomae-small是12层，videomase-large是24层。
-在越深层，越大的模型上压缩效果会越好，如果您打算在videomae-large上尝试压缩，按照[train.sh](tools\train.sh)里的说明：
+在越深层，越大的模型上压缩效果会越好，如果您打算在videomae-large上尝试压缩，按照[train.sh](tools/train.sh)里的说明：
 1. 下载videomae-large的预训练权重 [下载链接](https://github.com/sming256/OpenTAD/tree/main/configs/adatad#prepare-the-pretrained-videomae-checkpoints)
-2. 在Thumos数据集上微调一个完整无压缩的baseline，使用[配置文件](configs\adatad\videomae\e2e_thumos_videomae_l_768x1_160_longlora.py)，需要修改一处地方（有注释：# you need to change it to your own path）
-3. 压缩，使用[配置文件](configs\adatad\videomae\e2e_thumos_videomae_l_768x1_160_LongLoRA_distillation_auto.py)，需要修改两处地方（有注释：# you need to change it to your own path）
+2. 在Thumos数据集上微调一个完整无压缩的baseline，使用[配置文件](configs/adatad/videomae/e2e_thumos_videomae_l_768x1_160_longlora.py)，需要修改一处地方（有注释：# you need to change it to your own path）
+3. 压缩，使用[配置文件](configs/adatad/videomae/e2e_thumos_videomae_l_768x1_160_LongLoRA_distillation_auto.py)，需要修改两处地方（有注释：# you need to change it to your own path）
 
 ## （optional）其它数据集
 这个仓库也给了ActivityNet数据集的配置文件，如果您打算在videomae-small上尝试压缩，按照：
 1. 下载videomae-small的预训练权重 [下载链接](https://github.com/sming256/OpenTAD/tree/main/configs/adatad#prepare-the-pretrained-videomae-checkpoints)
-2. 在ActivityNet数据集上微调一个完整无压缩的baseline，使用[配置文件](configs\adatad\videomae\e2e_anet_videomae_s_768x1_160_LongLoRA.py)，需要修改一处地方（有注释：# you need to change it to your own path）。我们微调的模型在[这里](https://pan.baidu.com/s/1Z2fkI_24vX6hchsJlQhZnA?pwd=tpbd)。
-3. 压缩，使用[配置文件](configs\adatad\videomae\e2e_anet_videomae_s_768x1_160_LongLoRA_distillation_auto.py)，需要修改的两处地方（有注释：# you need to change it to your own path）。我们压缩的模型在[这里](https://pan.baidu.com/s/1xFP1lL5-AxwiwYPGzE34ng?pwd=tpbd)。
+2. 在ActivityNet数据集上微调一个完整无压缩的baseline，使用[配置文件](configs/adatad/videomae/e2e_anet_videomae_s_768x1_160_LongLoRA.py)，需要修改一处地方（有注释：# you need to change it to your own path）。我们微调的模型在[这里](https://pan.baidu.com/s/1Z2fkI_24vX6hchsJlQhZnA?pwd=tpbd)。
+3. 压缩，使用[配置文件](configs/adatad/videomae/e2e_anet_videomae_s_768x1_160_LongLoRA_distillation_auto.py)，需要修改的两处地方（有注释：# you need to change it to your own path）。我们压缩的模型在[这里](https://pan.baidu.com/s/1xFP1lL5-AxwiwYPGzE34ng?pwd=tpbd)。
 
 ## 联系方式
 如果您对于代码或论文有任何问题，欢迎通过论文首页的邮箱联系我们

@@ -17,8 +17,9 @@ pip install mmaction2==1.1.0 -use-pep517
 
 **Step 3.** Install other requirements
 
-git clone and cd into project
 ```
+git clone git@github.com:nanxiaolu/Progressive_Block_Drop-TAD.git
+cd Progressive_Block_Drop-TAD
 pip install -r requirements.txt
 ```
 
@@ -28,7 +29,7 @@ The code is tested with Python 3.10.12, torch==2.7.0, CUDA 12.8, other versions 
 
 Put this checkpoint into the /pretrain/ folder. The file uncompressed-thumos-videomae_small.pth is required, while others is optional.
 
- [uncompressed-moel](https://pan.baidu.com/s/1Z2fkI_24vX6hchsJlQhZnA?pwd=tpbd)
+ [uncompressed-model](https://pan.baidu.com/s/1Z2fkI_24vX6hchsJlQhZnA?pwd=tpbd)
 
 [compressed-model-anet](https://pan.baidu.com/s/1xFP1lL5-AxwiwYPGzE34ng?pwd=tpbd)
 
